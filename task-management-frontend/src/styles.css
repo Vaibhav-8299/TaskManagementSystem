@@ -1,0 +1,232 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --secondary: #6B7280;
+  --secondary-hover: #4B5563;
+  --danger: #EF4444;
+  --danger-hover: #DC2828;
+  --success: #10B981;
+  --success-text: #065F46;
+  --warning: #F59E0B;
+  --warning-text: #92400E;
+  
+  --bg-color: #F3F4F6;
+  --card-bg: #FFFFFF;
+  --text-main: #111827;
+  --text-muted: #6B7280;
+  
+  --border-radius: 8px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Global Container */
+.container {
+  max-width: 900px;
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  padding: 30px;
+  margin-top: 40px;
+}
+
+/* Common Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #E5E7EB;
+  padding-bottom: 15px;
+}
+
+h1, h2 {
+  margin: 0;
+  color: var(--text-main);
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: #E5E7EB;
+  color: var(--text-main);
+}
+.btn-secondary:hover {
+  background-color: #D1D5DB;
+}
+
+.btn-edit {
+  background-color: var(--warning);
+  color: white;
+  padding: 6px 12px;
+}
+.btn-edit:hover {
+  background-color: #D97706;
+}
+
+.btn-delete {
+  background-color: var(--danger);
+  color: white;
+  padding: 6px 12px;
+  margin-left: 8px;
+}
+.btn-delete:hover {
+  background-color: var(--danger-hover);
+}
+
+/* Alerts */
+.alert {
+  padding: 12px 16px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #D1FAE5;
+  color: var(--success-text);
+  border: 1px solid #A7F3D0;
+}
+
+.alert-error {
+  background-color: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FECACA;
+}
+
+/* Table */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th, .task-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.task-table th {
+  background-color: #F9FAFB;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.task-table tbody tr:hover {
+  background-color: #F9FAFB;
+}
+
+/* Badges */
+.badge {
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.badge:hover {
+  opacity: 0.8;
+}
+
+.badge-pending {
+  background-color: #FEF3C7;
+  color: var(--warning-text);
+}
+
+.badge-completed {
+  background-color: #D1FAE5;
+  color: var(--success-text);
+}
+
+/* Form Styles */
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.required {
+  color: var(--danger);
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.error-text {
+  color: var(--danger);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.form-actions {
+  margin-top: 30px;
+}
+
+/* Loading & Empty State */
+.loading, .empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 16px;
+}

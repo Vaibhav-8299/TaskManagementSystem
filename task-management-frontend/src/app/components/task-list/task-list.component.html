@@ -1,0 +1,66 @@
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>📋 Task Management</h1>
+    <button class="btn btn-primary" (click)="addTask()">+ Add New Task</button>
+  </div>
+
+  <!-- Success Message -->
+  <div class="alert alert-success" *ngIf="successMessage">
+    ✅ {{ successMessage }}
+  </div>
+
+  <!-- Error Message -->
+  <div class="alert alert-error" *ngIf="errorMessage">
+    ❌ {{ errorMessage }}
+  </div>
+
+  <!-- Loading spinner -->
+  <div class="loading" *ngIf="isLoading">
+    <p>Loading tasks...</p>
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" *ngIf="!isLoading && tasks.length === 0">
+    <p>No tasks found. Click "Add New Task" to get started!</p>
+  </div>
+
+  <!-- Task Table -->
+  <table class="task-table" *ngIf="!isLoading && tasks.length > 0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Created</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.id }}</td>
+        <td><strong>{{ task.title }}</strong></td>
+        <td>{{ task.description || '—' }}</td>
+        <td>
+          <!-- Status Badge — clickable to toggle -->
+          <span
+            class="badge"
+            [class.badge-completed]="task.status === 'Completed'"
+            [class.badge-pending]="task.status === 'Pending'"
+            (click)="toggleStatus(task)"
+            title="Click to toggle status">
+            {{ task.status }}
+          </span>
+        </td>
+        <td>{{ task.createdAt | date: 'dd/MM/yyyy' }}</td>
+        <td class="actions">
+          <button class="btn btn-edit" (click)="editTask(task.id)">✏️ Edit</button>
+          <button class="btn btn-delete" (click)="deleteTask(task.id)">🗑️ Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

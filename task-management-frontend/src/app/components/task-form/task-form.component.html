@@ -1,0 +1,72 @@
+<div class="container form-container">
+  
+  <div class="header">
+    <h2>{{ isEditMode ? '✏️ Edit Task' : '📝 Add New Task' }}</h2>
+    <button class="btn btn-secondary" (click)="navigateBack()">Back to List</button>
+  </div>
+
+  <div class="alert alert-error" *ngIf="errorMessage">
+    ❌ {{ errorMessage }}
+  </div>
+
+  <form (ngSubmit)="onSubmit()" #taskForm="ngForm" class="task-form">
+    
+    <!-- Title Input -->
+    <div class="form-group">
+      <label for="title">Task Title <span class="required">*</span></label>
+      <input 
+        type="text" 
+        id="title" 
+        name="title" 
+        [(ngModel)]="task.title" 
+        required 
+        placeholder="Enter task title (e.g., Buy Groceries)"
+        class="form-control"
+        #title="ngModel"
+      >
+      <div *ngIf="title.invalid && (title.dirty || title.touched)" class="error-text">
+        Title is required.
+      </div>
+    </div>
+
+    <!-- Description Input -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea 
+        id="description" 
+        name="description" 
+        [(ngModel)]="task.description" 
+        rows="4" 
+        placeholder="Enter optional description..."
+        class="form-control"
+      ></textarea>
+    </div>
+
+    <!-- Status Dropdown (Only show in Edit Mode for better UX, or show always) -->
+    <div class="form-group" *ngIf="isEditMode">
+      <label for="status">Status</label>
+      <select 
+        id="status" 
+        name="status" 
+        [(ngModel)]="task.status" 
+        class="form-control"
+      >
+        <option value="Pending">🕒 Pending</option>
+        <option value="Completed">✅ Completed</option>
+      </select>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-actions">
+      <button 
+        type="submit" 
+        class="btn btn-primary" 
+        [disabled]="taskForm.invalid || isSaving"
+      >
+        {{ isSaving ? 'Saving...' : (isEditMode ? 'Save Changes' : 'Create Task') }}
+      </button>
+    </div>
+
+  </form>
+
+</div>

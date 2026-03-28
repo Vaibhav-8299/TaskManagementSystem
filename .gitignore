@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+dist/
+build/
+npm-debug.log*
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IDE
+.vscode/
+.vs/
+.idea/
+
+# Environment
+.env
+
+# OS-specific
+.DS_Store
+Thumbs.db
