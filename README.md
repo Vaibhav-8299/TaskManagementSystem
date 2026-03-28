@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS Tasks (
 );
 ```
 
-3. Ensure your MySQL credentials match what is in the backend: `user=root;password=Gaurav9519@$`.
+3. Ensure your MySQL credentials match what is in the backend:
 
 ---
 
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS Tasks (
 1. **No AutoMapper / No Repository Pattern**: The backend avoids bloated boilerplate. Services map directly to DTOs and talk directly to the `DbContext`. This keeps the API extremely fast, readable, and easy to maintain.
 2. **Global Error Handling Middleware**: Instead of wrapping every Controller method in `try/catch` blocks, a central `ExceptionMiddleware` catches any failures and returns clean, uniform `500` JSON errors to the frontend without crashing the application.
 3. **Database-Managed Timestamps**: Both `CreatedAt` and `UpdatedAt` are heavily managed by the database using `CURRENT_TIMESTAMP ON UPDATE`. EF Core is configured simply to ignore those columns on updates to prevent tracking conflicts.
-4. **Zoneless Angular Strategy**: The frontend leverages manual `ChangeDetectorRef` triggering inside Observable callbacks, optimizing rendering speeds and eliminating `zone.js` bloat tracking.
+ bloat tracking.
 
 ---
 
@@ -101,4 +101,4 @@ CREATE TABLE IF NOT EXISTS Tasks (
 
 ---
 
-*Project built successfully using Angular CLI & .NET 8 Scaffoldings.*
+
