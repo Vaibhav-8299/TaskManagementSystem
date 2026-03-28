@@ -9,14 +9,14 @@ This project provides a complete end-to-end flow allowing users to Create, Read,
 ## 🏗️ Tech Stack
 
 ### Backend
-* **Framework**: .NET 8 (C#)
+* **Framework**: .NET  (C#)
 * **Architecture**: 3-Layer Architecture (Controller → Service → DbContext)
 * **ORM**: Entity Framework Core (Database First Approach)
 * **Database**: MySQL
 * **Key Features**: Global Exception Middleware, Dependency Injection, Auto-timestamp triggers, ENUM Status Validation, Swagger UI.
 
 ### Frontend
-* **Framework**: Angular 19+ (Zoneless Setup configured)
+* **Framework**: Angular  
 * **Styling**: Vanilla CSS (Modern, Responsive, Glass-like UI)
 * **Key Features**: Reactive API handling (HttpClient), Real-time Change Detection, Routing, Smart Error/Success handling.
 
