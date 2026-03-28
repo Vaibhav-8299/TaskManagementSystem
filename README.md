@@ -1,6 +1,6 @@
 # 📋 Full-Stack Task Management System
 
-A production-ready, clean, and modern Task Management application built with **.NET 8 (ASP.NET Core Web API)**, **Angular 19**, and **MySQL**.
+A production-ready, clean, and modern Task Management application built with **.NET  (ASP.NET Core Web API)**, **Angular **, and **MySQL**.
 
 This project provides a complete end-to-end flow allowing users to Create, Read, Update, and Delete (CRUD) tasks, alongside instantly toggling task statuses between 'Pending' and 'Completed'.
 
